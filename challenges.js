@@ -76,7 +76,17 @@ sumNumbers([2, 10, -5]) //=> 7
 sumNumbers([]) //=> 0
 -----------------------------------------------------------------*/
 // Your solution for 03-sumNumbers here:
-function sumNumbers(nums) {}
+function sumNumbers(nums) {
+  let sum = 0
+  if (nums.length === 0) {
+    sum = 0
+  } else {
+    for (i = 0; i < nums.length; i++) {
+      sum = sum + nums[i]
+    }
+  }
+  return sum
+}
 /*-----------------------------------------------------------------
 Challenge: 04-addList
 
