@@ -13,7 +13,7 @@ sayHello() //=> Hello!
 -----------------------------------------------------------------*/
 // Your solution for 00-sayHello (example) here:
 function sayHello() {
-  return 'Hello!'
+  return "Hello!";
 }
 /*-----------------------------------------------------------------
 Challenge: 01-addOne
@@ -31,7 +31,7 @@ addOne(-5) //=> -4
 -----------------------------------------------------------------*/
 // Your solution for 01-addOne here:
 function addOne(num) {
-  return num + 1
+  return num + 1;
 }
 /*-----------------------------------------------------------------
 Challenge: 02-addTwoNumbers
@@ -52,10 +52,10 @@ addTwoNumbers('Hello', 5) //=> NaN
 -----------------------------------------------------------------*/
 // Your solution for 02-addTwoNumbers here:
 function addTwoNumbers(num1, num2) {
-  if (typeof num1 === 'number' && typeof num2 === 'number') {
-    return num1 + num2
+  if (typeof num1 === "number" && typeof num2 === "number") {
+    return num1 + num2;
   } else {
-    return NaN
+    return NaN;
   }
 }
 /*-----------------------------------------------------------------
@@ -77,15 +77,15 @@ sumNumbers([]) //=> 0
 -----------------------------------------------------------------*/
 // Your solution for 03-sumNumbers here:
 function sumNumbers(nums) {
-  let sum = 0
+  let sum = 0;
   if (nums.length === 0) {
-    sum = 0
+    sum = 0;
   } else {
     for (i = 0; i < nums.length; i++) {
-      sum = sum + nums[i]
+      sum = sum + nums[i];
     }
   }
-  return sum
+  return sum;
 }
 /*-----------------------------------------------------------------
 Challenge: 04-addList
@@ -106,11 +106,11 @@ add(7,-12) //=> -5
 -----------------------------------------------------------------*/
 // Your solution for 04-addList here:
 function addList() {
-  let sum = 0
+  let sum = 0;
   for (i = 0; i < arguments.length; i++) {
-    sum = sum + arguments[i]
+    sum = sum + arguments[i];
   }
-  return sum
+  return sum;
 }
 /*-----------------------------------------------------------------
 Challenge: 05-computeRemainder
@@ -132,13 +132,13 @@ computeRemainder(10.5, 3) //=> 1.5
 -----------------------------------------------------------------*/
 // Your solution for 05-computeRemainder:
 function computeRemainder(n1, n2) {
-  let remainder = 0
+  let remainder = 0;
   if (n2 === 0) {
-    return Infinity
+    return Infinity;
   } else {
-    remainder = n1 % n2
+    remainder = n1 % n2;
   }
-  return remainder
+  return remainder;
 }
 /*-----------------------------------------------------------------
 Challenge: 06-range
@@ -159,15 +159,15 @@ range(5,2) //=> "First argument must be less than second"
 -----------------------------------------------------------------*/
 // Your solution for 06-range here:
 function range(n1, n2) {
-  let numberRange = []
+  let numberRange = [];
   if (n2 < n1) {
-    return 'First argument must be less than second'
+    return "First argument must be less than second";
   } else {
     for (i = n1; i < n2; i++) {
-      numberRange.push(i)
+      numberRange.push(i);
     }
   }
-  return numberRange
+  return numberRange;
 }
 /*-----------------------------------------------------------------
 Challenge: 07-reverseUpcaseString
@@ -183,7 +183,13 @@ Examples:
 reverseUpcaseString("SEI Rocks!"); //=> "!SKCOR IES" 
 -----------------------------------------------------------------*/
 // Your solution for 07-reverseUpcaseString here:
-function reverseUpcaseString(string) {}
+function reverseUpcaseString(string) {
+  var reverseString = "";
+  for (i = 0; i < string.length; i++) {
+    reverseString = string.charAt(i).toUpperCase() + reverseString;
+  }
+  return reverseString;
+}
 /*-----------------------------------------------------------------
 Challenge: 08-removeEnds
 
@@ -764,5 +770,5 @@ module.exports = {
   countTheBits,
   gridTrip,
   addChecker,
-  totalTaskTime
-}
+  totalTaskTime,
+};
