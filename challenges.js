@@ -132,6 +132,7 @@ function computeRemainder(n1, n2) {
   if (n2 === 0) return Infinity
   return n1 - Math.floor(n1 / n2) * n2
 }
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity
 /*-----------------------------------------------------------------
 Challenge: 06-range
 
@@ -150,7 +151,17 @@ range(1,1) //=> []
 range(5,2) //=> "First argument must be less than second"
 -----------------------------------------------------------------*/
 // Your solution for 06-range here:
-function range(n1, n2) {}
+function range(n1, n2) {
+  let arr = []
+  if (n1 > n2) {
+    return 'First argument must be less than second'
+  }
+  while (n1 < n2) {
+    arr.push(n1)
+    n1 += 1
+  }
+  return arr
+}
 /*-----------------------------------------------------------------
 Challenge: 07-reverseUpcaseString
 
