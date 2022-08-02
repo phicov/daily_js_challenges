@@ -176,7 +176,13 @@ Examples:
 reverseUpcaseString("SEI Rocks!"); //=> "!SKCOR IES" 
 -----------------------------------------------------------------*/
 // Your solution for 07-reverseUpcaseString here:
-function reverseUpcaseString(string) {}
+function reverseUpcaseString(string) {
+  let arr = []
+  for (let i = 0; i < string.length; i++) {
+    arr.unshift(string[i])
+  }
+  return arr.join('').toUpperCase()
+}
 /*-----------------------------------------------------------------
 Challenge: 08-removeEnds
 
@@ -193,7 +199,14 @@ removeEnds('SEI Rocks!'); //=> "DI Rocks"
 removeEnds('a'); //=> "" (empty string)
 -----------------------------------------------------------------*/
 // Your solution for 08-removeEnds here:
-function removeEnds(string) {}
+function removeEnds(string) {
+  if (string.length < 3) return ''
+  let result = ''
+  for (let i = 1; i < string.length - 1; i++) {
+    result += string.charAt(i)
+  }
+  return result
+}
 /*-----------------------------------------------------------------
 Challenge: 09-charCount
 
@@ -212,7 +225,21 @@ charCount('hello') //=> { h: 1, e: 1, l: 2, o: 1 }
 charCount('Today is fantastic!') //=> { T: 1, o: 1, d: 1, a: 3, y: 1, ' ': 2, i: 2, s: 2, f: 1, n: 1, t: 2, c: 1, '!': 1 }
 -----------------------------------------------------------------*/
 // Your solution for 09-charCount here:
-function charCount(string) {}
+function charCount(string) {
+  let charCount = {}
+  for (let i = 0; i < string.length; i++) {
+    if (charCount) {
+      if (charCount.hasOwnProperty(string[i])) {
+        charCount[string[i]] += 1
+      } else {
+        charCount[string[i]] = 1
+      }
+    } else {
+      charCount[string[i]] = 1
+    }
+  }
+  return charCount
+}
 /*-----------------------------------------------------------------
 Challenge: 10-formatWithPadding
 
@@ -234,7 +261,13 @@ formatWithPadding(42, '*', 10); //=> "********42"
 formatWithPadding(1234, '*', 3); //=> "1234"
 -----------------------------------------------------------------*/
 // Your solution for 10-formatWithPadding here:
-function formatWithPadding(n, char, length) {}
+function formatWithPadding(n, char, length) {
+  n = n + ''
+  while (n.length < length) {
+    n = char + n
+  }
+  return n
+}
 /*-----------------------------------------------------------------
 Challenge: 11-isPalindrome
 
