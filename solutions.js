@@ -462,9 +462,8 @@ function hammingDistance(s1, s2) {
 // Your solution for 13-mumble here:
 
 function mumble(str) {
-  var result = ''
-  for (var i = 0; i < str.length; i++) {
-    // the ((i || '') && '-') only adds a dash if it's not the first iteration
+  let result = ''
+  for (let i = 0; i < str.length; i++) {
     result += ((i || '') && '-') + str.charAt(i).repeat(i + 1)
   }
   return result

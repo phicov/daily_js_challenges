@@ -342,7 +342,13 @@ mumble('121'); //=> '1-22-111'
 mumble('!A 2'); //=> '!-AA-   -2222'
 -----------------------------------------------------------------*/
 // Your solution for 13-mumble here:
-function mumble(string) {}
+function mumble(string) {
+  let result = ''
+  for (let i = 0; i < string.length; i++) {
+    result += ((i || '') && '-') + string.charAt(i).repeat(i + 1)
+  }
+  return result
+}
 /*-----------------------------------------------------------------
 Challenge: 14-fromPairs
 
@@ -360,7 +366,15 @@ fromPairs([ ['a', 1], ['b', 2], ['c', 3] ]) //=> { a: 1, b: 2, c: 3 }
 fromPairs([ ['name', 'Sam"], ['age', 24], ['name', 'Sally'] ]) //=> { name: "Sally", age: 24 }
 -----------------------------------------------------------------*/
 // Your solution for 14-fromPairs here:
-function fromPairs(arr) {}
+function fromPairs(arr) {
+  let object = {}
+  for (nestedArr of arr) {
+    let key = nestedArr[0]
+    let value = nestedArr[1]
+    object[`${key}`] = value
+  }
+  return object
+}
 /*-----------------------------------------------------------------
 Challenge: 15-mergeObjects
 
@@ -378,7 +392,16 @@ mergeObjects({a: 1, b: 2, c: 3}, {d: 4});  //=> {a: 1, b: 2, c: 3, d: 4}
 mergeObjects({a: 1, b: 2, c: 3}, {d: 4}, {b: 22, d: 44});  //=> {a: 1, b: 22, c: 3, d: 44}
 -----------------------------------------------------------------*/
 // Your solution for 15-mergeObjects here:
-function mergeObjects(obj1, obj2) {}
+function mergeObjects(obj1, obj2) {
+  let finalObj = objects[0]
+  for (obj of objects) {
+    for (const [key, value] of Object.entries(obj)) {
+      finalObj[key] = value
+    }
+  }
+  return finalObj
+}
+
 /*-----------------------------------------------------------------
 Challenge: 16-findHighestPriced
 
@@ -412,7 +435,17 @@ findHighestPriced([
 //=> { sku: 'b2', price: 50 }
 -----------------------------------------------------------------*/
 // Your solution for 16-findHighestPriced here:
-function findHighestPriced(arr) {}
+function findHighestPriced(arr) {
+  indexOfHighest = 0
+  highestPrice = 0
+  for (i = 0; i < arr.length; i++) {
+    if (arr[i].price > highestPrice) {
+      highestPrice = arr[i].price
+      indexOfHighest = i
+    }
+  }
+  return arr[indexOfHighest]
+}
 /*-----------------------------------------------------------------
 Challenge: 17-mapArray
 
