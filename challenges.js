@@ -472,7 +472,13 @@ mapArray( ['rose', 'tulip', 'daisy'], function(f, i) {
 //=> ["1 - rose", "2 - tulip", "3 - daisy"]
 -----------------------------------------------------------------*/
 // Your solution for 17-mapArray here:
-function mapArray(arr, cb) {}
+function mapArray(arr, cb) {
+  let mappedArray = []
+  for (i = 0; i < arr.length; i++) {
+    mappedArray.push(cb(arr[i], i))
+  }
+  return mappedArray
+}
 /*-----------------------------------------------------------------
 Challenge: 18-reduceArray
 
@@ -506,7 +512,12 @@ reduceArray( ['Yes', 'No', 'Yes', 'Maybe'], function(acc, v) {
 //=> {"Yes": 2, "No": 1, "Maybe": 1}
 -----------------------------------------------------------------*/
 // Your solution for 18-reduceArray here:
-function reduceArray(arr, acc, value) {}
+function reduceArray(arr, acc, value) {
+  for (i = 0; i < arr.length; i++) {
+    value = acc(value, arr[i], i)
+  }
+  return value
+}
 /*-----------------------------------------------------------------
 Challenge: 19-flatten
 
@@ -533,7 +544,14 @@ flatten( [1, [2, [3, [4]]], 1, 'a', ['b', 'c']] );
 //=> [1, 2, 3, 4, 1, 'a', 'b', 'c']
 -----------------------------------------------------------------*/
 // Your solution for 19-flatten here:
-function flatten(arr) {}
+function flatten(arr) {
+  return arr.reduce(const flat= (a, b)=>{} {
+    if (Array.isArray(b)) {
+      return a.concat(flatten(b))
+    }
+    return a.concat(b)
+  }, [])
+}
 /*-----------------------------------------------------------------
 Challenge: 20-isPrime
 
