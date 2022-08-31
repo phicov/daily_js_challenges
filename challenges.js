@@ -527,7 +527,13 @@ reduceArray( ['Yes', 'No', 'Yes', 'Maybe'], function(acc, v) {
 //=> {"Yes": 2, "No": 1, "Maybe": 1}
 -----------------------------------------------------------------*/
 // Your solution for 18-reduceArray here:
-function reduceArray(arr, acc, value) {}
+function reduceArray(arr, acc, value) {
+  let newValue = value;
+  arr.forEach(function (element, index) {
+    newValue = acc(newValue, element, index);
+  });
+  return newValue;
+}
 /*-----------------------------------------------------------------
 Challenge: 19-flatten
 
@@ -554,7 +560,17 @@ flatten( [1, [2, [3, [4]]], 1, 'a', ['b', 'c']] );
 //=> [1, 2, 3, 4, 1, 'a', 'b', 'c']
 -----------------------------------------------------------------*/
 // Your solution for 19-flatten here:
-function flatten(arr) {}
+function flatten(arr) {
+  newArray = [];
+  arr.forEach(function (element) {
+    if (Array.isArray(element)) {
+      newArray = newArray.concat(flatten(element));
+    } else {
+      newArray.push(element);
+    }
+  });
+  return newArray;
+}
 /*-----------------------------------------------------------------
 Challenge: 20-isPrime
 
@@ -574,7 +590,13 @@ isPrime(29) //=> true
 isPrime(200) //=> false
 -----------------------------------------------------------------*/
 // Your solution for 20-isPrime here:
-function isPrime(n) {}
+function isPrime(n) {
+  if (n < 2 || !Number.isInteger(n)) return false;
+  for (i = 2; i <= n / 2; i++) {
+    if (Number.isInteger(n / i)) return false;
+  }
+  return true;
+}
 /*-----------------------------------------------------------------
 Challenge: 21-primeFactors
 
